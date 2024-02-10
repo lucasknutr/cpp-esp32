@@ -33,6 +33,7 @@ void loop() {
     digitalWrite(RELE2, LOW);
     delay(1000);
     digitalWrite(RELE1, LOW);
+    Serial.println("SIGNAL");
   }
   else if (digitalRead(LED_BUILTIN) == LOW) {
     digitalWrite(LED_BUILTIN, HIGH);

@@ -16,9 +16,9 @@ void setup() {
 }
 
 void loop() {
-  // Envia sinal para o receptor (no caso, a Jetson), será utilizado para desligamento do aparelho 
   // Verifica se a sonda está conectada
   while(digitalRead(SONDA) == HIGH) {
+    // Se a sonda não estiver conectada e o botão for pressionado, liga os reles e o led
     if(digitalRead(BUTTON_PIN) == LOW){
       digitalWrite(RELE2, HIGH);
       delay(1000);
@@ -28,7 +28,7 @@ void loop() {
       digitalWrite(LED_BUILTIN, LOW);
     }
   }
-
+  // Se a sonda estiver conectada, e o botão for pressionado, desliga os reles e o led
   if(digitalRead(BUTTON_PIN) == LOW){
     digitalWrite(RELE2, LOW);
     delay(1000);
